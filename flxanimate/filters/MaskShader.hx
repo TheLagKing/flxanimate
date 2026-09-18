@@ -21,11 +21,11 @@ class MaskShader extends FlxShader
 
 		float maskAlpha = texture2D(mainPalette, maskPos).a;
 
-		if ((maskPos.x < 0. || maskPos.x > 1.) || (maskPos.y < 0. || maskPos.y > 1.))
-			maskAlpha = 0.;
+		if ((maskPos.x < 0.0 || maskPos.x > 1.0) || (maskPos.y < 0.0 || maskPos.y > 1.0))
+			maskAlpha = 0.0;
 
-		if (maskAlpha > 0.)
-			maskAlpha = 1.;
+		if (maskAlpha > 0.0)
+			maskAlpha = 1.0;
 
 		gl_FragColor = texture2D(bitmap, openfl_TextureCoordv) * maskAlpha;
 	}
@@ -34,6 +34,6 @@ class MaskShader extends FlxShader
 	public function new()
 	{
 		super();
-		relativePos.value = [0, 0];
+		relativePos.value = [0.0, 0.0];
 	}
 }
